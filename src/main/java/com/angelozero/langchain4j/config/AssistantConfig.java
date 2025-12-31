@@ -1,6 +1,6 @@
 package com.angelozero.langchain4j.config;
 
-import com.angelozero.langchain4j.AssistantAiService;
+import com.angelozero.langchain4j.gateway.AssistantAiService;
 import com.angelozero.langchain4j.service.AssistantTools;
 import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 import dev.langchain4j.service.AiServices;

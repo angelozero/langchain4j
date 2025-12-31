@@ -1,5 +1,6 @@
-package com.angelozero.langchain4j;
+package com.angelozero.langchain4j.entrypoint;
 
+import com.angelozero.langchain4j.gateway.AssistantAiService;
 import dev.langchain4j.service.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;

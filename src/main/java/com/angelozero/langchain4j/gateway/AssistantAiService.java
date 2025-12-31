@@ -1,4 +1,4 @@
-package com.angelozero.langchain4j;
+package com.angelozero.langchain4j.gateway;
 
 
 import dev.langchain4j.service.Result;
