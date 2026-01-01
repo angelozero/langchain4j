@@ -23,7 +23,7 @@ Unlike from a common chatbot, an Assistant with 'Tools' goes through a cyclic an
 ## 1. Setup and Dependency
 For this project I'm using **Spring Boot 4** and the latest version of **LangChain4J**. It's really important has an API Key from [Google AI Studio](https://aistudio.google.com/)
 
-- **pom.xml**
+**pom.xml**
 ```xml
 <!-- currently 1.10.0-beta18 -->
 <dependency>
@@ -40,13 +40,13 @@ For this project I'm using **Spring Boot 4** and the latest version of **LangCha
 </dependency>
 ```
 
-- **application.properties**
+**application.properties**
 ```shell
 spring.application.name=langchain4j
 langchain4j.google.ai.gemini.api-key=YOUR_GOOGLE_AI_STUDIO_API_KEY
 langchain4j.google.ai.gemini.model-name=gemini-2.5-flash
 ```
-- **AssistantConfig.java**
+**AssistantConfig.java**
 ```java
 public class AssistantConfig {
 
@@ -81,17 +81,17 @@ An Assistant without instructions ends up becoming unpredictable. Through the `a
 
 *Obs.: You can access the entire file [here](https://github.com/angelozero/langchain4j/blob/main/src/main/resources/prompts/assistant-instructions.txt)*
 
-- **assistant-instructions.txt**
+**assistant-instructions.txt**
 ```text
 You are an expert assistant in BRAZILIAN FOOTBALL. Respond ONLY about competitions, clubs, statistics, and history of national football ...
 ```
 
-- **Prompt Engineering**
-The AI's focus here is on about Brazilian Soccer and nothing else. When using `@SystemMessage(fromResource = "...")`, **LangChain4J** injects all those rules into your interactions, ensuring the AI processes the information correctly
+**Prompt Engineering**
+- The AI's focus here is on about Brazilian Soccer and nothing else. When using `@SystemMessage(fromResource = "...")`, **LangChain4J** injects all those rules into your interactions, ensuring the AI processes the information correctly
 
 
-- **Ai Service**
-The `AssistantAiService` interface, with the `@AiService` annotation, is the entry point for all the AI logic. Spring handles all the implementation at runtime, connecting the **Gemini** model, **Tools** and the **instructions**.
+**Ai Service**
+- The `AssistantAiService` interface, with the `@AiService` annotation, is the entry point for all the AI logic. Spring handles all the implementation at runtime, connecting the **Gemini** model, **Tools** and the **instructions**.
 
 ```java
 @AiService
@@ -126,11 +126,14 @@ public class AssistantTools {
 ## Conclusion
 **LangChain4J** integrated with **Gemini** abstracts the LLM's consumption in the Java ecosystem, allowing for the implementation of smart agents. 
 
-- **Natural Language Proccess (NLP)** - High precision in intent and entity extraction.
+**Natural Language Proccess (NLP)** 
+- High precision in intent and entity extraction.
 
-- **Context Orquestration** - Behaviour control by system instructions
+**Context Orquestration** 
+- Behaviour control by system instructions.
 
-- **Function Calling** - Execution logic services and queries at runtime to retrieve data using **Tools**.
+**Function Calling** 
+- Execution logic services and queries at runtime to retrieve data using **Tools**.
 
 ---
 
