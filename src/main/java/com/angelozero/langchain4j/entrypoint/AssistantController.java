@@ -21,5 +21,4 @@ public class AssistantController {
         Result<String> result = assistantAiService.handleRequest(userMessage);
         return result.content();
     }
-
 }
